@@ -24,6 +24,6 @@ private Button button;
     }
     public void openMain2Activity(){
         intent intent= (intent) new Intent(this, Main2Activity.class);
-        startActivity((Intent) intent) ;
+        startActivity((Intent) intent)
     }
 }
