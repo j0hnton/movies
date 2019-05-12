@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Showflix</string>
+    <string name="show_fl_x">SHOW FL!X</string>
+    <string name="click_to_start">Click to start</string>
 </resources>
