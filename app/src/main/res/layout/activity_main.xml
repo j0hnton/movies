@@ -23,7 +23,7 @@
         android:layout_marginStart="83dp"
         android:layout_marginTop="57dp"
         android:text="@string/show_fl_x"
-        android:textSize="30dp" />
+        android:textSize="50sp" />
 
 
     <Button
