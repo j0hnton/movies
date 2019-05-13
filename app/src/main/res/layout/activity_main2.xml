@@ -44,7 +44,8 @@
         android:layout_marginBottom="213dp"
         android:background="@color/colorTextIcons"
         android:hint="Enter Second Name."
-        android:padding="5dp" />
+        android:padding="5dp"
+        android:layout_below="@id/nameEditText"/>
 
 
     <Button
