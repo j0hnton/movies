@@ -14,7 +14,7 @@ public class Main3Activity extends AppCompatActivity {
         Intent intent=getIntent();
         String text=intent.getStringExtra(Main2Activity.EXTRA_TEXT);
         TextView textView1=(TextView)  findViewById(R.id.textView1);
-        textView1.setText(text);
+        textView1.setText("Username"+":"+""+text);
     }
 
 }
