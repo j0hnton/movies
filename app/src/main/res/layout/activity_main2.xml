@@ -29,8 +29,23 @@
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="213dp"
         android:background="@color/colorTextIcons"
-        android:hint="Enter Full Names."
+        android:hint="Enter First Name."
         android:padding="5dp" />
+
+    <EditText
+        android:id="@+id/nameEditText2"
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="213dp"
+        android:background="@color/colorTextIcons"
+        android:hint="Enter Second Name."
+        android:padding="5dp" />
+
 
     <Button
         android:id="@+id/button2"
