@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class Main2Activity<intent> extends AppCompatActivity {
     private Button button2;
     private EditText EditText;
-
+public  static final String EXTRA_TEXT="com.moringaschool.showflix.moringaschool.EXTRA_TEXT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +29,13 @@ public class Main2Activity<intent> extends AppCompatActivity {
     }
     public void openMain3Activity(){
 
-        Toast.makeText(Main2Activity.this, "Saved Successfully", Toast.LENGTH_LONG).show();
-        intent intent= (intent) new Intent(this, Main3Activity.class);
+ EditText editText=(EditText) findViewById(R.id.nameEditText1);
+ String text=editText.getText().toString();
 
+        Toast.makeText(Main2Activity.this, "Saved Successfully", Toast.LENGTH_LONG).show();
+        Intent intent= (Intent) new Intent(this, Main3Activity.class);
+        
+        intent.putExtra(EXTRA_TEXT,text);
         startActivity((Intent) intent) ;
     }
 }

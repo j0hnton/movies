@@ -2,4 +2,8 @@
     <string name="app_name">Showflix</string>
     <string name="show_fl_x">SHOW FL!X</string>
     <string name="click_to_start">Click to start</string>
+    <string name="finish">FINISH</string>
+    <string name="enter_your_details_to_continue">Enter your details to continue</string>
+    <string name="enter_first_name">Enter First Name.</string>
+    <string name="enter_second_name">Enter Second Name.</string>
 </resources>

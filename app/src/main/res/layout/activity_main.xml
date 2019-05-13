@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="127dp"
-        android:layout_marginBottom="190dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginBottom="171dp"
         android:text="@string/click_to_start" />
 
 </RelativeLayout>

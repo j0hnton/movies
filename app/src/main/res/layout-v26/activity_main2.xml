@@ -38,7 +38,6 @@
         android:layout_width="371dp"
         android:layout_height="43dp"
         android:layout_above="@+id/button2"
-        android:layout_below="@+id/nameEditText1"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="14dp"
@@ -49,9 +48,9 @@
         android:background="@color/colorTextIcons"
         android:hint="@string/enter_second_name"
         android:inputType="text"
-
         android:padding="5dp"
-        tools:targetApi="o" />
+        tools:targetApi="o"
+        />
 
 
     <Button
