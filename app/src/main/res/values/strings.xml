@@ -6,4 +6,5 @@
     <string name="enter_your_details_to_continue">Enter your details to continue</string>
     <string name="enter_first_name">Enter First Name.</string>
     <string name="enter_second_name">Enter Second Name.</string>
+    <string name="todo">TODO</string>
 </resources>

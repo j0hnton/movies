@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity<intent> extends AppCompatActivity {
     @BindView(R.id.button) Button button;
-
+    @BindView(R.id.appTitle) TextView mTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +22,10 @@ public class MainActivity<intent> extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        Typeface fredrick = Typeface.createFromAsset(getAssets(), "fonts/FrederickatheGreat-Regular.ttf");
+        mTitle.setTypeface(fredrick);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
