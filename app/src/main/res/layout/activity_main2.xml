@@ -30,7 +30,7 @@
         android:background="@color/colorTextIcons"
         android:hint="@string/enter_first_name"
         android:inputType=""
-        android:padding="5dp
+        android:padding="5dp"
         tools:targetApi="o" />
 
 
