@@ -26,11 +26,11 @@ import okhttp3.Response;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.movie_display);
             Intent intent = getIntent();
-            String text = intent.getStringExtra("text");
+            String search = intent.getStringExtra("search");
             TextView results = (TextView) findViewById(R.id.searchDisplay);
 
-            results.setText ("Search Results for " + " " + text);
-              getMovie(text);
+            results.setText ("Search Results for " + " " + search);
+              getMovie(search);
 
         }
         private void getMovie(String search){

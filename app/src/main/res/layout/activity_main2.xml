@@ -12,9 +12,8 @@
         android:layout_marginStart="9dp"
         android:layout_marginTop="53dp"
         android:layout_marginEnd="-1dp"
-        android:text="@string/enter_your_details_to_continue"
-        android:textSize="30sp"
-        />
+        android:text="Login"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/nameEditText1"
@@ -23,9 +22,9 @@
         android:layout_below="@+id/textView"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="209dp"
-        android:layout_marginEnd="71dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="64dp"
         android:autofillHints=""
         android:background="@color/colorTextIcons"
         android:hint="@string/enter_first_name"
@@ -43,7 +42,7 @@
         android:layout_marginStart="522dp"
         android:layout_marginTop="-68dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/red" />
+         />
     <Button
         android:id="@+id/button2"
         android:layout_width="204dp"
@@ -55,4 +54,5 @@
         android:layout_marginEnd="108dp"
         android:layout_marginBottom="14dp"
         android:text="@string/finish" />
+
 </RelativeLayout>

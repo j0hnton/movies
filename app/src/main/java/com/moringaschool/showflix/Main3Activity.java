@@ -34,9 +34,9 @@ public class Main3Activity extends AppCompatActivity {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String text = mSearch.getText().toString();
+                String search = mSearch.getText().toString();
                 Intent intent = (Intent) new Intent(Main3Activity.this, MoiveDisplay.class);
-                intent.putExtra("text", text);
+                intent.putExtra("search", search);
                 startActivity(intent);
             }
         });

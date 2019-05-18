@@ -30,12 +30,12 @@ public  static final String EXTRA_TEXT="com.moringaschool.showflix.moringaschool
     public void openMain3Activity(){
 
  EditText editText=(EditText) findViewById(R.id.nameEditText1);
- String text=editText.getText().toString();
+ String search=editText.getText().toString();
 
         Toast.makeText(Main2Activity.this, "Saved Successfully", Toast.LENGTH_LONG).show();
         Intent intent= (Intent) new Intent(this, Main3Activity.class);
         
-        intent.putExtra(EXTRA_TEXT,text);
+        intent.putExtra(EXTRA_TEXT,search);
         startActivity((Intent) intent) ;
     }
 }
