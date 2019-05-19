@@ -19,15 +19,15 @@
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/appCompatTextView"
-        android:layout_width="96dp"
-        android:layout_height="43dp"
+        android:layout_width="157dp"
+        android:layout_height="51dp"
 
         android:layout_alignParentTop="true"
         android:layout_marginStart="6dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="1dp"
         android:layout_toEndOf="@+id/appLogo"
-        android:fontFamily="@font/anton"
+        android:fontFamily="@font/bangers"
         android:text="@string/app_name"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -43,7 +43,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="2dp"
         android:background="@android:color/transparent"
         tools:layout_editor_absoluteX="18dp"
         tools:layout_editor_absoluteY="6dp">
@@ -71,7 +71,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginTop="60dp"
             android:layout_marginBottom="8dp"
-            android:fontFamily="@font/allan"
+            android:fontFamily="@font/sail"
             android:text="Login"
             android:textColor="@color/colorPrimaryText"
             android:textSize="30sp"
@@ -106,13 +106,13 @@
             android:layout_alignParentEnd="true"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="296dp"
+            android:layout_marginBottom="28dp"
             android:backgroundTint="@color/colorPrimaryText"
             android:gravity="center"
             android:hint="Enter Password"
             app:layout_constraintBottom_toTopOf="@+id/button2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.926"
+            app:layout_constraintHorizontal_bias="0.885"
             app:layout_constraintStart_toStartOf="parent" />
         />
 
@@ -124,12 +124,25 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="264dp"
             android:text="@string/finish"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.559"
+            app:layout_constraintHorizontal_bias="0.56"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Don't have an account? Sign up"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2"
+            app:layout_constraintVertical_bias="0.79" />
 
     </android.support.constraint.ConstraintLayout>
 </RelativeLayout>
