@@ -3,34 +3,53 @@ package com.moringaschool.showflix;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
+import com.moringaschool.showflix.adapters.MoviesListAdapter;
+
 import java.io.IOException;
+import java.util.ArrayList;
 
 ;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
     public class MoiveDisplay extends AppCompatActivity {
-        public static final String TAG = com.moringaschool.showflix.Main3Activity.class.getSimpleName();
+
         public static final String EXTRA_TEXT = "com.moringaschool.showflix.moringaschool.EXTRA_TEXT";
 
+        public static final String TAG = MoiveDisplay.class.getSimpleName();
+
+            @BindView(R.id.recyclerView)
+            RecyclerView mRecyclerView;
+private  MoviesListAdapter mAdapter;
+
+
+            public ArrayList<Movie> mMovie = new ArrayList<>();
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.movie_display);
+            ButterKnife.bind(this);
+
             Intent intent = getIntent();
             String search = intent.getStringExtra("search");
-            TextView results = (TextView) findViewById(R.id.searchDisplay);
 
+            TextView results = (TextView) findViewById(R.id.search);
             results.setText ("Search Results for " + " " + search);
-              getMovie(search);
+            getMovie(search);
 
         }
         private void getMovie(String search){
@@ -42,18 +61,21 @@ import okhttp3.Response;
                 }
 
                 @Override
-                public void onResponse(Call call, Response response) throws IOException {
-                    try{
-                        String jsonData=response.body().string();
-                        Log.v (TAG, jsonData);
-                    }catch (IOException e){
-                        e.printStackTrace();
-                    }
+                public void onResponse(Call call, Response response) {
+                    mMovie = movieService.processResults(response);
+                    MoiveDisplay.this.runOnUiThread(new Runnable() {
 
+                        @Override
+                        public void run() {
+                            mAdapter= new MoviesListAdapter(getApplicationContext(), mMovie);
+                            mRecyclerView.setAdapter(mAdapter);
+                            RecyclerView.LayoutManager layoutManager =
+                                    new LinearLayoutManager(MoiveDisplay.this);
+                            mRecyclerView.setLayoutManager(layoutManager);
+                            mRecyclerView.setHasFixedSize(true);
+                        }
+                    });
                 }
             });
         }
-
     }
-
-
