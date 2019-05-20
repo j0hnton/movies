@@ -5,7 +5,7 @@ import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
-public class MovieService {
+public class MovieService{
     public static void findMovie(String search, Callback callback) {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
