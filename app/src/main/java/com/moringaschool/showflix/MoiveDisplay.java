@@ -48,7 +48,7 @@ private  MoviesListAdapter mAdapter;
             String search = intent.getStringExtra("search");
 
             TextView results = (TextView) findViewById(R.id.search);
-            results.setText ("Search Results for " + " " + search);
+
             getMovie(search);
 
         }
@@ -66,7 +66,8 @@ private  MoviesListAdapter mAdapter;
                     MoiveDisplay.this.runOnUiThread(new Runnable() {
 
                         @Override
-                        public void run() {
+
+                            public void run(){
                             mAdapter= new MoviesListAdapter(getApplicationContext(), mMovie);
                             mRecyclerView.setAdapter(mAdapter);
                             RecyclerView.LayoutManager layoutManager =

@@ -2,28 +2,25 @@ package com.moringaschool.showflix;
 
 public class Movie {
     private String mName;
-    private String mPopularity;
     private String mReleaseDate;
     private String mOverview;
+    private  String mImage;
+    private  String mRate;
 
 
-
-    public Movie(String name,String popularity,
-                String release_date, String overview) {
+    public Movie(String name,
+                String release_date, String overview, String poster_path, String popularity) {
         this.mName = name;
-        this.mPopularity = popularity;
         this.mReleaseDate = release_date;
         this.mOverview =overview;
-
+        this.mImage=poster_path;
+this.mRate=popularity;
     }
 
     public String getName() {
         return mName;
     }
 
-    public String getPopularity() {
-        return mPopularity;
-    }
 
 
     public String getReleaseDate() {
@@ -34,4 +31,10 @@ public class Movie {
         return mOverview;
     }
 
+  public String getImage(){
+    return mImage;
+    }
+    public String getRate(){
+        return mRate;
+    }
 }

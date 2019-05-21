@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.moringaschool.showflix.Movie;
 import com.moringaschool.showflix.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -28,7 +29,7 @@ public class MoviesListAdapter extends RecyclerView.Adapter<MoviesListAdapter.Mo
 
     @Override
     public MoviesListAdapter.MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_display, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_list_item, parent, false);
         MovieViewHolder viewHolder = new MovieViewHolder(view);
         return viewHolder;
     }
@@ -57,9 +58,11 @@ public class MoviesListAdapter extends RecyclerView.Adapter<MoviesListAdapter.Mo
         }
 
         public void bindMovie(Movie movie) {
+            Picasso.get().load("https://api.themoviedb.org"+movie.getImage()).into(mMovieImageView);
+            System.out.println("https://api.themoviedb.org"+movie.getImage());
             mNameTextView.setText(movie.getName());
             mCategoryTextView.setText(movie.getOverview());
-            mRatingTextView.setText("Rating: " + movie.getPopularity());
+
         }
     }
 }
