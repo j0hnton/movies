@@ -58,7 +58,7 @@ public class MoviesListAdapter extends RecyclerView.Adapter<MoviesListAdapter.Mo
         }
 
         public void bindMovie(Movie movie) {
-            Picasso.get().load("https://api.themoviedb.org"+movie.getImage()).into(mMovieImageView);
+            Picasso.get().load("https://image.tmdb.org/t/p/w500"+movie.getImage()).into(mMovieImageView);
             System.out.println("https://api.themoviedb.org"+movie.getImage());
             mNameTextView.setText(movie.getName());
             mCategoryTextView.setText(movie.getOverview());

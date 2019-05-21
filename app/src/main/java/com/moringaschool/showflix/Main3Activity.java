@@ -25,9 +25,9 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         Intent intent = getIntent();
-        String text = intent.getStringExtra(Main2Activity.EXTRA_TEXT);
-        TextView textView1 = (TextView) findViewById(R.id.textView1);
-        textView1.setText("Username" + ":" + "" + text);
+//        String text = intent.getStringExtra(Main2Activity.EXTRA_TEXT);
+//        TextView textView1 = (TextView) findViewById(R.id.textView1);
+//        textView1.setText("Username" + ":" + "" + text);
         ButterKnife.bind(this);
 
 

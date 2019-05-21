@@ -38,8 +38,8 @@
 
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="412dp"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="729dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
@@ -64,55 +64,56 @@
         <TextView
 
             android:id="@+id/textView"
-            android:layout_width="117dp"
-            android:layout_height="58dp"
+            android:layout_width="85dp"
+            android:layout_height="53dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="60dp"
-            android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif"
             android:text="Login"
             android:textColor="@color/colorPrimaryText"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/nameEditText1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.557"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
         <EditText
             android:id="@+id/nameEditText1"
-            android:layout_width="296dp"
-            android:layout_height="71dp"
+            android:layout_width="220dp"
+            android:layout_height="49dp"
             android:layout_below="@+id/textView"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginBottom="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="248dp"
             android:backgroundTint="@color/colorPrimaryText"
             android:gravity="center"
             android:hint="Enter Username or Email"
             app:layout_constraintBottom_toTopOf="@+id/password"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.539"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0" />
         />
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="284dp"
-            android:layout_height="68dp"
+            android:layout_width="247dp"
+            android:layout_height="43dp"
             android:layout_below="@+id/nameEditText1"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="32dp"
-            android:layout_marginBottom="28dp"
+            android:layout_marginBottom="280dp"
             android:backgroundTint="@color/colorPrimaryText"
             android:gravity="center"
             android:hint="Enter Password"
             app:layout_constraintBottom_toTopOf="@+id/button2"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.885"
+            app:layout_constraintHorizontal_bias="0.596"
             app:layout_constraintStart_toStartOf="parent" />
         />
 
@@ -124,11 +125,11 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="264dp"
+            android:layout_marginBottom="104dp"
             android:text="@string/finish"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintHorizontal_bias="0.685"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView

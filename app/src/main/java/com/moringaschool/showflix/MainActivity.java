@@ -1,5 +1,6 @@
 package com.moringaschool.showflix;
         import android.content.Intent;
+        import android.media.MediaPlayer;
         import android.os.Bundle;
         import android.os.Handler;
         import android.support.v7.app.AppCompatActivity;
@@ -10,19 +11,22 @@ package com.moringaschool.showflix;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.appTitle) TextView appTitle;
-
+MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        mediaPlayer=MediaPlayer.create(getApplicationContext(),R.raw.audio);
+        mediaPlayer.start();
+
         new Handler().postDelayed(
                 new Runnable() {
                     @Override
                     public void run() {
 
-                        Intent intent = new Intent(getApplicationContext(),Main2Activity.class);
+                        Intent intent = new Intent(getApplicationContext(),Main3Activity.class);
                         startActivity(intent);
 
 
@@ -30,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 },
-                1500);
+                5192);
 
 
 
