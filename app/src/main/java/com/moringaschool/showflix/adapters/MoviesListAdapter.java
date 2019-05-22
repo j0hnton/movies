@@ -48,7 +48,7 @@ public class MoviesListAdapter extends RecyclerView.Adapter<MoviesListAdapter.Mo
         @BindView(R.id.movieImageView) ImageView mMovieImageView;
         @BindView(R.id.movieNameTextView) TextView mNameTextView;
         @BindView(R.id.overviewTextView) TextView mCategoryTextView;
-        @BindView(R.id.dateTextView) TextView mRatingTextView;
+        @BindView(R.id.rateTextVIew) TextView mRatingTextView;
         private Context mContext;
 
         public MovieViewHolder(View itemView) {
@@ -61,6 +61,7 @@ public class MoviesListAdapter extends RecyclerView.Adapter<MoviesListAdapter.Mo
             Picasso.get().load("https://image.tmdb.org/t/p/w500"+movie.getImage()).into(mMovieImageView);
             System.out.println("https://api.themoviedb.org"+movie.getImage());
             mNameTextView.setText(movie.getName());
+            mRatingTextView.setText("Rating"+":"+" "+movie.getRate());
             mCategoryTextView.setText(movie.getOverview());
 
         }
