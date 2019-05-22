@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+<activity android:name=".SignUp"
+    android:parentActivityName=".Main2Activity"></activity>
         <activity android:name=".MoiveDisplay"
             android:parentActivityName=".Main3Activity"></activity>
+
         <activity android:name=".Main3Activity"
             android:parentActivityName=".Main2Activity"></activity>
         <activity android:name=".Main2Activity"
