@@ -49,7 +49,7 @@ public  static final String EXTRA_TEXT="com.moringaschool.showflix.moringaschool
  EditText editText=(EditText) findViewById(R.id.nameEditText1);
  String search=editText.getText().toString();
 
-        Toast.makeText(Main2Activity.this, "Saved Successfully", Toast.LENGTH_LONG).show();
+        Toast.makeText(Main2Activity.this, "Success", Toast.LENGTH_LONG).show();
         Intent intent= (Intent) new Intent(this, Main3Activity.class);
 
         intent.putExtra(EXTRA_TEXT,search);

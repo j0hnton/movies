@@ -1,5 +1,10 @@
 package com.moringaschool.showflix;
 
+import org.parceler.Parcel;
+
+import java.util.ArrayList;
+
+@Parcel
 public class Movie {
     private String mName;
     private String mReleaseDate;
@@ -7,6 +12,7 @@ public class Movie {
     private  String mImage;
     private  String mRate;
 
+    public Movie() {}
 
     public Movie(String name,
                 String release_date, String overview, String poster_path, String popularity) {

@@ -1,8 +1,11 @@
 package com.moringaschool.showflix;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -26,7 +29,8 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
     public class MoiveDisplay extends AppCompatActivity {
-
+        private SharedPreferences mSharedPreferences;
+        private String mRecentSearch;
         public static final String EXTRA_TEXT = "com.moringaschool.showflix.moringaschool.EXTRA_TEXT";
 
         public static final String TAG = MoiveDisplay.class.getSimpleName();
@@ -44,13 +48,18 @@ private  MoviesListAdapter mAdapter;
             setContentView(R.layout.movie_display);
             ButterKnife.bind(this);
 
+
             Intent intent = getIntent();
             String search = intent.getStringExtra("search");
 
             TextView results = (TextView) findViewById(R.id.search);
 
             getMovie(search);
-
+            mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            mRecentSearch = mSharedPreferences.getString(Constants.PREFERENCES_SEARCH_KEY, null);
+            if (mRecentSearch != null) {
+                getMovie(mRecentSearch);
+            }
         }
         private void getMovie(String search){
             final MovieService movieService=new MovieService();
@@ -74,9 +83,13 @@ private  MoviesListAdapter mAdapter;
                                     new LinearLayoutManager(MoiveDisplay.this);
                             mRecyclerView.setLayoutManager(layoutManager);
                             mRecyclerView.setHasFixedSize(true);
+
                         }
                     });
                 }
             });
         }
     }
+//
+//        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(),2);
+//                            mRecyclerView.setLayoutManager(layoutManager);
