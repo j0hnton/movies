@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.moringaschool.showflix.Constants;
 import com.moringaschool.showflix.Movie;
 import com.moringaschool.showflix.R;
 import com.squareup.picasso.Picasso;
@@ -56,6 +59,7 @@ public  MovieDetailFragment(){};
         mNameTextView.setText(mMovie.getName());
         mImageView.setOnClickListener(this);
         mCategoryTextView.setText(mMovie.getOverview());
+
         return view;
     }
 
@@ -63,6 +67,13 @@ public  MovieDetailFragment(){};
     public void onClick(View v) {
         if (v == mImageView) {
             Toast.makeText(getContext(),"Movie Saved",Toast.LENGTH_LONG).show();
+        }
+        if (v == mImageView) {
+            DatabaseReference movieref = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_MOVIE);
+            movieref.push().setValue(mMovie);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
 
     }

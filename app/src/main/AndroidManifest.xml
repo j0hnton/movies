@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moringaschool.showflix">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,20 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.MovieDetailActivity"
-            android:parentActivityName=".MoiveDisplay"></activity>
-<activity android:name=".SignUp"
-    android:parentActivityName=".Main2Activity"></activity>
-        <activity android:name=".MoiveDisplay"
-            android:parentActivityName=".Main3Activity"></activity>
-
-        <activity android:name=".Main3Activity"
-            android:parentActivityName=".Main2Activity"></activity>
-        <activity android:name=".Main2Activity"
-            />
-        <activity android:name=".MainActivity"
+        <activity android:name=".SavedMovieListActivity"></activity>
+        <activity
+            android:name=".ui.MovieDetailActivity"
+            android:parentActivityName=".MoiveDisplay" />
+        <activity
+            android:name=".SignUp"
+            android:parentActivityName=".Main2Activity" />
+        <activity
+            android:name=".MoiveDisplay"
+            android:parentActivityName=".MoiveDisplay" />
+        <activity
+            android:name=".Main3Activity"
+             />
+        <activity android:name=".Main2Activity" />
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

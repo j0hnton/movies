@@ -6,41 +6,63 @@ import java.util.ArrayList;
 
 @Parcel
 public class Movie {
-    private String mName;
-    private String mReleaseDate;
-    private String mOverview;
-    private  String mImage;
-    private  String mRate;
-
-    public Movie() {}
-
-    public Movie(String name,
-                String release_date, String overview, String poster_path, String popularity) {
-        this.mName = name;
-        this.mReleaseDate = release_date;
-        this.mOverview =overview;
-        this.mImage=poster_path;
-this.mRate=popularity;
+    public Movie(String name, String releaseDate, String overview, String image, String rate) {
+        this.name = name;
+        this.releaseDate = releaseDate;
+        this.overview = overview;
+        this.image = image;
+        this.rate = rate;
     }
+
+    String name;
+    String releaseDate;
+    String overview;
+    String image;
 
     public String getName() {
-        return mName;
+        return name;
     }
 
-
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getReleaseDate() {
-        return mReleaseDate;
+        return releaseDate;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public String getOverview() {
-        return mOverview;
+        return overview;
     }
 
-  public String getImage(){
-    return mImage;
+    public void setOverview(String overview) {
+        this.overview = overview;
     }
-    public String getRate(){
-        return mRate;
+
+    public String getImage() {
+        return image;
     }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getRate() {
+        return rate;
+    }
+
+    public void setRate(String rate) {
+        this.rate = rate;
+    }
+
+    String rate;
+
+    public Movie() {}
+
+
+
 }

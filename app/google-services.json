@@ -1,58 +1,21 @@
 {
   "project_info": {
-    "project_number": "480291352715",
-    "firebase_url": "https://showfl-x.firebaseio.com",
-    "project_id": "showfl-x",
-    "storage_bucket": "showfl-x.appspot.com"
+    "project_number": "112717897806",
+    "firebase_url": "https://showflix002.firebaseio.com",
+    "project_id": "showflix002",
+    "storage_bucket": "showflix002.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:480291352715:android:a6d6c8e2838c6420",
-        "android_client_info": {
-          "package_name": "com.afrikid.showflix"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "480291352715-3621qidduk5lvjeesul0vdkichdu3cbn.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.afrikid.showflix",
-            "certificate_hash": "79879cd57f39f8e12daf06c9596cd0f14caf9d19"
-          }
-        },
-        {
-          "client_id": "480291352715-tvte655obopj4d2r8jsstlgf1l1kquff.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBuLApyKghhHnn1pMG3JF-0Ul7bCQXlODg"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "480291352715-tvte655obopj4d2r8jsstlgf1l1kquff.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:480291352715:android:98bccfc7ab8a3905",
+        "mobilesdk_app_id": "1:112717897806:android:98bccfc7ab8a3905",
         "android_client_info": {
           "package_name": "com.moringaschool.showflix"
         }
       },
       "oauth_client": [
         {
-          "client_id": "480291352715-81538mjnpjc9olngv7lafg32o906dfrq.apps.googleusercontent.com",
+          "client_id": "112717897806-fqlftj9cvsb3rb4mahcdbut272p2var5.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.moringaschool.showflix",
@@ -60,20 +23,20 @@
           }
         },
         {
-          "client_id": "480291352715-tvte655obopj4d2r8jsstlgf1l1kquff.apps.googleusercontent.com",
+          "client_id": "112717897806-ivkbsrrdnjtlc49jqu95m6tvis47vdou.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBuLApyKghhHnn1pMG3JF-0Ul7bCQXlODg"
+          "current_key": "AIzaSyDIpUdp_IdxXJlUgfxs_pxIfbzutI46tms"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "480291352715-tvte655obopj4d2r8jsstlgf1l1kquff.apps.googleusercontent.com",
+              "client_id": "112717897806-ivkbsrrdnjtlc49jqu95m6tvis47vdou.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
