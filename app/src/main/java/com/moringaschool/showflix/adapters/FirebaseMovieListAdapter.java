@@ -3,7 +3,6 @@ package com.moringaschool.showflix.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -34,51 +33,101 @@ public class FirebaseMovieListAdapter extends FirebaseRecyclerAdapter<Movie, Fir
     private DatabaseReference mRef;
     private OnStartDragListener mOnStartDragListener;
     private Context mContext;
+    private ChildEventListener mChildEventListener;
+    private ArrayList<Movie> mMovies = new ArrayList<>();
 
     public FirebaseMovieListAdapter(FirebaseRecyclerOptions<Movie> options,
-                                         DatabaseReference ref,
-                                         OnStartDragListener onStartDragListener,
-                                         Context context){
+                                    Query ref,
+                                    SavedMovieListActivity  onStartDragListener, Context context) {
         super(options);
         mRef = ref.getRef();
         mOnStartDragListener = onStartDragListener;
         mContext = context;
-    }
 
-@Optional
-    protected void onBindViewHolder(final FirebaseMovieViewHolder viewHolder, Movie model, int position) {
-        viewHolder.bindMovie(model);
-        viewHolder.mMovieImageView.setOnTouchListener(new View.OnTouchListener() {
+        mChildEventListener = mRef.addChildEventListener(new ChildEventListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
-                    mOnStartDragListener.onStartDrag(viewHolder);
-                }
-                return false;
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                mMovies.add(dataSnapshot.getValue(Movie.class));
             }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
         });
+
     }
 
+        @Override
+        public boolean onItemMove(int fromPosition, int toPosition) {
+            Collections.swap(mMovies, fromPosition, toPosition);
+            notifyItemMoved(fromPosition, toPosition);
+            return false;
+        }
+
+        @Override
+        public void onItemDismiss(int position) {
+            mMovies.remove(position);
+            getRef(position).removeValue();
+        }
 
     @Override
-    protected void onBindViewHolder(@NonNull FirebaseMovieViewHolder firebaseRestaurantViewHolder, int position, @NonNull Movie movie) {
-        firebaseRestaurantViewHolder.bindMovie(movie);
-    }
+        protected void onBindViewHolder(@NonNull final FirebaseMovieViewHolder viewHolder, int position, @NonNull Movie model) {
+            viewHolder.bindMovie(model);
+            viewHolder.mMovieImageView.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+                        mOnStartDragListener.onStartDrag(viewHolder);
+                    }
+                    return false;
+                }
+            });
 
-    @NonNull
-    @Override
-    public FirebaseMovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_list_item_drag, parent, false);
-        return new FirebaseMovieViewHolder(view);
-    }
+            viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
 
-    @Override
-    public boolean onItemMove(int fromPosition, int toPosition){
-        return false;
-    }
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(mContext, MovieDetailActivity.class);
+                    intent.putExtra("position", viewHolder.getAdapterPosition());
+                    intent.putExtra("restaurants", Parcels.wrap(mMovies));
+                    mContext.startActivity(intent);
+                }
+            });
 
-    @Override
-    public void onItemDismiss(int position){
+        }
 
-    }
-}
+        @NonNull
+        @Override
+        public FirebaseMovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_list_item_drag, parent, false);
+            return new FirebaseMovieViewHolder(view);
+        }
+
+        private void setIndexInFirebase() {
+            for (Movie movie : mMovies) {
+                int index = mMovies.indexOf(movie);
+                DatabaseReference ref = getRef(index);
+                movie.setIndex(Integer.toString(index));
+                ref.setValue(movie);
+            }
+        }
+
+        @Override
+        public void stopListening() { super.stopListening(); mRef.removeEventListener(mChildEventListener); }}

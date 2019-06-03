@@ -25,7 +25,12 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
-public class FirebaseMovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+import butterknife.Optional;
+
+public class FirebaseMovieViewHolder extends RecyclerView.ViewHolder  {
+    private static final int MAX_WIDTH = 200;
+    private static final int MAX_HEIGHT = 200;
+
 
     View mView;
     Context mContext;
@@ -34,11 +39,12 @@ public class FirebaseMovieViewHolder extends RecyclerView.ViewHolder implements 
         super(itemView);
         mView = itemView;
         mContext = itemView.getContext();
-        itemView.setOnClickListener(this);
+
     }
 
     public void bindMovie(Movie movie) {
         mMovieImageView = (ImageView) mView.findViewById(R.id.movieImageView);
+
         TextView nameTextView =  mView.findViewById(R.id.movieNameTextView);
         nameTextView.setText(movie.getName());
         ImageView movieImageView = mView.findViewById(R.id.movieImageView);
@@ -54,7 +60,7 @@ public class FirebaseMovieViewHolder extends RecyclerView.ViewHolder implements 
         Picasso.get().load(movie.getImage()).into(mMovieImageView);
     }
 
-    @Override
+    @Optional
     public void onClick(View view) {
         final ArrayList<Movie> movieArrayList = new ArrayList<>();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_MOVIE);

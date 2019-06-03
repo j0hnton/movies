@@ -14,6 +14,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.moringaschool.showflix.adapters.FirebaseMovieListAdapter;
 import com.moringaschool.showflix.adapters.FirebaseMovieViewHolder;
 import com.moringaschool.showflix.util.OnStartDragListener;
@@ -41,30 +42,19 @@ public class SavedMovieListActivity extends AppCompatActivity implements OnStart
     }
 
     private void setUpFirebaseAdapter(){
-//        FirebaseRecyclerOptions<Movie> options =
-//                new FirebaseRecyclerOptions.Builder<Movie>()
-//                        .setQuery(mMovieReference, Movie.class)
-//                        .build();
-//
-//        mFirebaseAdapter = new FirebaseRecyclerAdapter<Movie, FirebaseMovieViewHolder>(options) {
-//            @Override
-//            protected void onBindViewHolder(@NonNull FirebaseMovieViewHolder firebaseMovieViewHolder, int position, @NonNull Movie movie) {
-//                firebaseMovieViewHolder.bindMovie (movie);
-//            }
-//
-//            @NonNull
-//            @Override
-//            public FirebaseMovieViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_list_item_drag, parent, false);
-//                return new FirebaseMovieViewHolder(view);
-//            }
-//        };
+
         mMovieReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_MOVIE);
+        Query query = FirebaseDatabase.getInstance()
+                .getReference(Constants.FIREBASE_CHILD_MOVIE)
+
+                .orderByChild(Constants.FIREBASE_QUERY_INDEX);
+
         FirebaseRecyclerOptions<Movie> options =
                 new FirebaseRecyclerOptions.Builder<Movie>()
                         .setQuery(mMovieReference, Movie.class)
                         .build();
 
+        mFirebaseAdapter = new FirebaseMovieListAdapter(options, query, this, this);
 
         mFirebaseAdapter = new FirebaseMovieListAdapter(options, mMovieReference, this, this);
 
@@ -95,4 +85,7 @@ public class SavedMovieListActivity extends AppCompatActivity implements OnStart
         mItemTouchHelper.startDrag(viewHolder);
 
     }
-}
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mFirebaseAdapter.stopListening(); } }
