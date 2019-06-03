@@ -43,7 +43,7 @@ public class FirebaseMovieViewHolder extends RecyclerView.ViewHolder  {
     }
 
     public void bindMovie(Movie movie) {
-        mMovieImageView = (ImageView) mView.findViewById(R.id.movieImageView);
+        mMovieImageView = (ImageView) mView.findViewById(R.id.drag);
 
         TextView nameTextView =  mView.findViewById(R.id.movieNameTextView);
         nameTextView.setText(movie.getName());
@@ -52,7 +52,8 @@ public class FirebaseMovieViewHolder extends RecyclerView.ViewHolder  {
 
         TextView rateTextView = mView.findViewById(R.id.rateTextVIew);
         rateTextView.setText("Rating: " + movie.getRate());
-
+        TextView release = mView.findViewById(R.id.release);
+        release.setText("Release Date:"+" "+ movie.getReleaseDate());
         TextView overviewTextView =  mView.findViewById(R.id.overviewTextView);
 
         overviewTextView.setText( movie.getOverview());

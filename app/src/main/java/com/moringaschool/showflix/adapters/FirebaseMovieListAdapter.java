@@ -106,7 +106,7 @@ public class FirebaseMovieListAdapter extends FirebaseRecyclerAdapter<Movie, Fir
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, MovieDetailActivity.class);
                     intent.putExtra("position", viewHolder.getAdapterPosition());
-                    intent.putExtra("restaurants", Parcels.wrap(mMovies));
+                    intent.putExtra("movies", Parcels.wrap(mMovies));
                     mContext.startActivity(intent);
                 }
             });
