@@ -9,14 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.moringaschool.showflix.Main2Activity;
-import com.moringaschool.showflix.Main3Activity;
 import com.moringaschool.showflix.Movie;
 import com.moringaschool.showflix.R;
 import com.moringaschool.showflix.ui.MovieDetailActivity;
-import com.moringaschool.showflix.ui.MovieDetailFragment;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;

@@ -66,8 +66,7 @@ public  MovieDetailFragment(){};
     @Override
     public void onClick(View v) {
         if (v == mImageView) {
-            Toast.makeText(getContext(),"Movie Saved",Toast.LENGTH_LONG).show();
-        }
+                  }
         if (v == mImageView) {
             DatabaseReference movieref = FirebaseDatabase
                     .getInstance()

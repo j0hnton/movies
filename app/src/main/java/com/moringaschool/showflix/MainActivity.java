@@ -34,7 +34,7 @@ MediaPlayer mediaPlayer;
 
                     }
                 },
-                5130);
+                1500);
 
 
 

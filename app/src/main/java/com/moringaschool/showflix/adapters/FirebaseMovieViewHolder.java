@@ -29,7 +29,7 @@ public class FirebaseMovieViewHolder extends RecyclerView.ViewHolder implements 
 
     View mView;
     Context mContext;
-
+    public ImageView mMovieImageView;
     public FirebaseMovieViewHolder(View itemView) {
         super(itemView);
         mView = itemView;
@@ -38,6 +38,7 @@ public class FirebaseMovieViewHolder extends RecyclerView.ViewHolder implements 
     }
 
     public void bindMovie(Movie movie) {
+        mMovieImageView = (ImageView) mView.findViewById(R.id.movieImageView);
         TextView nameTextView =  mView.findViewById(R.id.movieNameTextView);
         nameTextView.setText(movie.getName());
         ImageView movieImageView = mView.findViewById(R.id.movieImageView);
@@ -49,6 +50,8 @@ public class FirebaseMovieViewHolder extends RecyclerView.ViewHolder implements 
         TextView overviewTextView =  mView.findViewById(R.id.overviewTextView);
 
         overviewTextView.setText( movie.getOverview());
+
+        Picasso.get().load(movie.getImage()).into(mMovieImageView);
     }
 
     @Override

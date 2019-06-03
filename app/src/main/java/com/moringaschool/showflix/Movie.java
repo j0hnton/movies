@@ -6,19 +6,24 @@ import java.util.ArrayList;
 
 @Parcel
 public class Movie {
+    String index;
+
+    public Movie() {}
+
     public Movie(String name, String releaseDate, String overview, String image, String rate) {
         this.name = name;
         this.releaseDate = releaseDate;
         this.overview = overview;
         this.image = image;
         this.rate = rate;
+        this.index = "not_specified";
     }
 
     String name;
     String releaseDate;
     String overview;
     String image;
-
+    String rate;
     public String getName() {
         return name;
     }
@@ -58,10 +63,17 @@ public class Movie {
     public void setRate(String rate) {
         this.rate = rate;
     }
+    public String getIndex() {
+        return index;
+    }
 
-    String rate;
+    public void setIndex(String index) {
+        this.index = index;
+    }
 
-    public Movie() {}
+
+
+
 
 
 

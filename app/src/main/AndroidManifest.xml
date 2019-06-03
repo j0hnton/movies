@@ -7,25 +7,27 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:label="@string/app_name">
 
-        <activity android:name=".SavedMovieListActivity"></activity>
+        <activity android:name=".SavedMovieListActivity"
+            android:parentActivityName=".Main3Activity"
+            android:label="Saved Movies">
+        </activity>
         <activity
             android:name=".ui.MovieDetailActivity"
-            android:parentActivityName=".MoiveDisplay" />
-        <activity
-            android:name=".SignUp"
-            android:parentActivityName=".Main2Activity" />
+            android:parentActivityName=".MoiveDisplay"
+            android:label="Search"/>
+
         <activity
             android:name=".MoiveDisplay"
-            android:parentActivityName=".MoiveDisplay" />
+            android:parentActivityName=".MoiveDisplay"
+            android:label="Search"/>
         <activity
             android:name=".Main3Activity"
-             />
-        <activity android:name=".Main2Activity" />
+            android:label="Home"/>
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
