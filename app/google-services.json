@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "112717897806",
+    "firebase_url": "https://showflix002.firebaseio.com",
+    "project_id": "showflix002",
+    "storage_bucket": "showflix002.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:112717897806:android:98bccfc7ab8a3905",
+        "android_client_info": {
+          "package_name": "com.moringaschool.showflix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "112717897806-fqlftj9cvsb3rb4mahcdbut272p2var5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moringaschool.showflix",
+            "certificate_hash": "79879cd57f39f8e12daf06c9596cd0f14caf9d19"
+          }
+        },
+        {
+          "client_id": "112717897806-ivkbsrrdnjtlc49jqu95m6tvis47vdou.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIpUdp_IdxXJlUgfxs_pxIfbzutI46tms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "112717897806-ivkbsrrdnjtlc49jqu95m6tvis47vdou.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
